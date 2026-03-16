@@ -1,0 +1,12 @@
+def estimate_time(text, wpm):
+    words = text.split()
+    return words / wpm
+
+print("Choose your user type:")
+print("1. Student")
+print("2. Teacher")
+print("3. Professional/Presenter/Other")
+
+user = input("Enter 1, 2, or 3: ")
+
+text = input("Paste your text here: ")
