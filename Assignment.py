@@ -1,4 +1,5 @@
 from colours import*
+from colorama import Fore, Style, Back
 
 #Reading Time Estimator
 def estimate_time(text, wpm):
@@ -88,7 +89,7 @@ while True:
     word_count = len(text.split())
     character_count = len(text)
 
-    print("\n--- Reading Summary ---")
+    print(f"{Fore.GREEN}\n--- Reading Summary ---{Style.RESET_ALL}")
     print(f"Reader Type: {'Student' if user=='1' else 'Teacher' if user=='2' else 'Professional'}")
     if user == "1":
         print(f"Grade Level: {grade}")
