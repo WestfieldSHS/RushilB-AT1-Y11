@@ -89,19 +89,17 @@ while True:
     word_count = len(text.split())
     character_count = len(text)
 
-    print(f"{Fore.GREEN}\n--- Reading Summary ---{Style.RESET_ALL}")
-    print(f"Reader Type: {'Student' if user=='1' else 'Teacher' if user=='2' else 'Professional'}")
+    print(f"{Fore.YELLOW}\n--- Reading Summary ---{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}Reader Type: {Style.RESET_ALL}{'Student' if user=='1' else 'Teacher' if user=='2' else 'Professional'}")
     if user == "1":
-        print(f"Grade Level: {grade}")
-    print(f"Reading Style: {'Silent' if reading_style=='1' else 'Aloud'}")
-    print(f"Word Count: {word_count}")
-    print(f"Character Count: {character_count}")
-    print(f"Estimated Time: {minutes} minutes {seconds} seconds")
-    print("------------------------")
+        print(f"{Fore.RED}Grade Level: {Style.RESET_ALL}{grade}")
+    print(f"{Fore.GREEN}Reading Style: {Style.RESET_ALL}{'Silent' if reading_style=='1' else 'Aloud'}")
+    print(f"{Fore.BLUE}Word Count: {Style.RESET_ALL}{word_count}")
+    print(f"{Fore.MAGENTA}Character Count: {Style.RESET_ALL}{character_count}")
+    print(f"{Fore.WHITE}Estimated Time: {Style.RESET_ALL}{minutes} minutes {seconds} seconds")
+    print("___________________________________________")
 
-    repeat = input("\nDo you want to run the program again? (yes/no): ")
+    repeat = input("\nDo you want to run the program again? (yes/no)(If you click yes the user type will still be the same): ")
     if repeat != "yes":
         print("Please run the program again if you want to estimate another text. Goodbye!")
         break
-
-
