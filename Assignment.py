@@ -1,4 +1,4 @@
-from colours import*
+
 from colorama import Fore, Style, Back
 
 #Reading Time Estimator
@@ -65,18 +65,18 @@ while True:
         elif grade in ["9", "10", "11", "12"]:
             wpm = 180 if reading_style == "1" else 250
         else:
-            print("Invalid grade level.")
+            print(f"{Fore.RED}INVALID GRADE LEVEL.{Style.RESET_ALL}")
             continue
 
     #USER TYPE: TEACHER
     elif user == "2":  
-        wpm = 183 if reading_style == "1" else 260
+         wpm = 183 if reading_style == "1" else 260
         
     #USER TYPE: PROFESSIONAL/PRESENTER/OTHER
     elif user == "3":  
         wpm = 238 if reading_style == "1" else 155
     else:
-        print("Invalid choice. Please enter 1, 2, or 3 .")
+        print(f"{Fore.RED}INVALID CHOICE. Please enter 1, 2, or 3.{Style.RESET_ALL}")
 
 
     base_seconds = estimate_time(text, wpm) * 60
@@ -99,7 +99,7 @@ while True:
     print(f"{Fore.WHITE}Estimated Time: {Style.RESET_ALL}{minutes} minutes {seconds} seconds")
     print("___________________________________________")
 
-    repeat = input("\nDo you want to run the program again? (yes/no)(If you click yes the user type will still be the same): ")
+    repeat = input(f"Do you want to run the program again? (yes/no)({Fore.RED}If you click yes the user type will still be the same{Style.RESET_ALL}): ")
     if repeat != "yes":
         print("Please run the program again if you want to estimate another text. Goodbye!")
         break
