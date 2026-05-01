@@ -18,20 +18,31 @@ def estimate_pauses(text):
 
 #USER INPUT SECTION
 print("Choose your user type:")
-print("1. Student")
-print("2. Teacher")
-print("3. Professional/Presenter/Other")
+print(f"{Fore.GREEN}1. Student{Style.RESET_ALL}")
+print(f"{Fore.BLUE}2. Teacher{Style.RESET_ALL}")
+print(f"{Fore.MAGENTA}3. Professional/Presenter/Other{Style.RESET_ALL}")
+    
+while True:
+    user = input("Enter 1, 2, or 3: ")
+    if user in ["1", "2", "3"]:
+        break
+    else:
+        print(f"{Fore.RED}INVALID CHOICE. Please choose 1, 2, or 3.{Style.RESET_ALL}")
 
-user = input("Enter 1, 2, or 3: ")
 
 while True:
     print("Reading Style:")
-    print("1. Silent (in the head)")
-    print("2. Aloud (out loud)")
+    print(f"{Fore.GREEN}1. Silent (in the head){Style.RESET_ALL}")
+    print(f"{Fore.BLUE}2. Aloud (out loud){Style.RESET_ALL}")
 
-    reading_style = input("Enter 1 or 2: ")
+    while True:
+        reading_style = input("Enter 1 or 2: ")
+        if reading_style in ["1", "2"]:
+            break
+        else:
+            print(f"{Fore.RED}INVALID CHOICE. Please choose 1 or 2.{Style.RESET_ALL}")
 
-    text = input("Paste your text here: ")
+    text = input("Paste your text here--> ")
     if user == "1":  #Student
         print("What year are you in?")
         print("Kindergarten") 
@@ -99,7 +110,7 @@ while True:
     print(f"{Fore.WHITE}Estimated Time: {Style.RESET_ALL}{minutes} minutes {seconds} seconds")
     print("___________________________________________")
 
-    repeat = input(f"Do you want to run the program again? (yes/no)({Fore.RED}If you click yes the user type will still be the same{Style.RESET_ALL}): ")
+    repeat = input(f"Do you want to run the program again? (yes/no)({Fore.RED}If you click yes the user type will stay the same{Style.RESET_ALL}): ")
     if repeat != "yes":
         print("Please run the program again if you want to estimate another text. Goodbye!")
         break
